@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # kill geth process:
-ps -ef | grep 'geth' | grep -v 'grep' | awk -F ' ' '{print $2}' | xargs kill -15
+ps -ef | grep 'geth' | grep -v 'grep' | awk -F ' ' '{print $2}' | xargs kill -9
 
 sleep 0.5
 
@@ -33,9 +33,9 @@ echo "import genesis json: "
 
 # start geth at background:
 echo "start geth at background: "
-./geth --datadir data/node0 --networkid 616 --port 10010 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8540 --http.api eth,web3,admin,net,miner,personal --mine --miner.threads 1 --syncmode full 2>>data/node0/teth.log &
-./geth --datadir data/node1 --networkid 616 --port 10011 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8541 --http.api eth,web3,admin,net,miner,personal --mine --miner.threads 1 --syncmode full 2>>data/node1/teth.log &
-./geth --datadir data/node2 --networkid 616 --port 10012 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8542 --http.api eth,web3,admin,net,miner,personal --mine --miner.threads 1 --syncmode full 2>>data/node2/teth.log &
+./geth --datadir data/node0 --networkid 616 --port 10010 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8540 --http.api eth,web3,admin,net,miner,personal --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node0/teth.log &
+./geth --datadir data/node1 --networkid 616 --port 10011 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8541 --http.api eth,web3,admin,net,miner,personal --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node1/teth.log &
+./geth --datadir data/node2 --networkid 616 --port 10012 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8542 --http.api eth,web3,admin,net,miner,personal --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node2/teth.log &
 
 # get enode info:
 enode_info0=`./geth attach http://127.0.0.1:8540 --exec "admin.nodeInfo.enode"`
