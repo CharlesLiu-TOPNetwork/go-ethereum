@@ -53,7 +53,7 @@ do
 
     # save contract object code used in console.
     short_name=`expr substr $contract_file 1 6`
-    res_list[index]="var $short_name = eth.contract($abi_data).at($address)"
+    res_list[index]="var $short_name = eth.contract($abi_data).at(\"$address\")"
   fi
 done
 
