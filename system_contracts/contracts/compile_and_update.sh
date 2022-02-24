@@ -1,3 +1,5 @@
+#! /bin/bash
+
 dst_json_file=$1
 
 if [ ! -f "$1" ];then
@@ -15,6 +17,8 @@ file_list=("CrossChain.sol" "TokenExchange.sol")
 address_list=("0000000000000000000000000000000000000100" "0000000000000000000000000000000000000200")
 res_list=("" "")
 ####
+
+bash update_go_api.sh
 
 length=${#file_list[*]}
 
