@@ -209,14 +209,15 @@ func (_IApp *IAppTransactorSession) HandleSynPackage(handleId uint8, msgBytes []
 
 // SystemMetaData contains all meta data concerning the System contract.
 var SystemMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alreadyInit\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 	Sigs: map[string]string{
 		"51e80672": "CROSS_CHAIN_CONTRACT_ADDR()",
 		"0e77db70": "TOKEN_EXCHANGE_CONTRACT_ADDR()",
 		"4fa689d8": "TRANSFER_IN_HANDLE()",
 		"b6d28d2e": "TRANSFER_OUT_HANDLE()",
+		"a78abc16": "alreadyInit()",
 	},
-	Bin: "0x608060405234801561001057600080fd5b5060e18061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c80630e77db7014604b5780634fa689d814606d57806351e80672146089578063b6d28d2e14608f575b600080fd5b60516095565b604080516001600160a01b039092168252519081900360200190f35b6073609b565b6040805160ff9092168252519081900360200190f35b605160a0565b607360a6565b61020081565b600181565b61010081565b60028156fea26469706673582212201367dd7187c6089feb9b3212cdaccb894ec0daafb988606762c8813df5cd72c964736f6c63430006040033",
+	Bin: "0x608060405234801561001057600080fd5b5061010e806100206000396000f3fe6080604052348015600f57600080fd5b506004361060505760003560e01c80630e77db701460555780634fa689d814607757806351e80672146093578063a78abc16146099578063b6d28d2e1460b3575b600080fd5b605b60b9565b604080516001600160a01b039092168252519081900360200190f35b607d60bf565b6040805160ff9092168252519081900360200190f35b605b60c4565b609f60ca565b604080519115158252519081900360200190f35b607d60d3565b61020081565b600181565b61010081565b60005460ff1681565b60028156fea26469706673582212205b76cf7c6f7a0ecc58d246f4d78dbf67e39b2fd779a337b119ab2ec53df3f13d64736f6c63430006040033",
 }
 
 // SystemABI is the input ABI used to generate the binding from.
@@ -514,17 +515,49 @@ func (_System *SystemCallerSession) TRANSFEROUTHANDLE() (uint8, error) {
 	return _System.Contract.TRANSFEROUTHANDLE(&_System.CallOpts)
 }
 
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_System *SystemCaller) AlreadyInit(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _System.contract.Call(opts, &out, "alreadyInit")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_System *SystemSession) AlreadyInit() (bool, error) {
+	return _System.Contract.AlreadyInit(&_System.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_System *SystemCallerSession) AlreadyInit() (bool, error) {
+	return _System.Contract.AlreadyInit(&_System.CallOpts)
+}
+
 // TokenExchangeMetaData contains all meta data concerning the TokenExchange contract.
 var TokenExchangeMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"},{\"internalType\":\"bytes\",\"name\":\"msgBytes\",\"type\":\"bytes\"}],\"name\":\"handleSynPackage\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alreadyInit\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"},{\"internalType\":\"bytes\",\"name\":\"msgBytes\",\"type\":\"bytes\"}],\"name\":\"handleSynPackage\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 	Sigs: map[string]string{
 		"51e80672": "CROSS_CHAIN_CONTRACT_ADDR()",
 		"0e77db70": "TOKEN_EXCHANGE_CONTRACT_ADDR()",
 		"4fa689d8": "TRANSFER_IN_HANDLE()",
 		"b6d28d2e": "TRANSFER_OUT_HANDLE()",
+		"a78abc16": "alreadyInit()",
 		"1182b875": "handleSynPackage(uint8,bytes)",
 	},
-	Bin: "0x608060405234801561001057600080fd5b506103aa806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80630e77db701461005c5780631182b875146100805780634fa689d81461016f57806351e806721461018d578063b6d28d2e14610195575b600080fd5b61006461019d565b604080516001600160a01b039092168252519081900360200190f35b6100fa6004803603604081101561009657600080fd5b60ff82351691908101906040810160208201356401000000008111156100bb57600080fd5b8201836020820111156100cd57600080fd5b803590602001918460018302840111640100000000831117156100ef57600080fd5b5090925090506101a3565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561013457818101518382015260200161011c565b50505050905090810190601f1680156101615780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610177610231565b6040805160ff9092168252519081900360200190f35b610064610236565b61017761023c565b61020081565b606060ff8416600114156101f7576101f083838080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061024192505050565b905061022a565b6040805162461bcd60e51b815260206004820152600360248201526262756760e81b604482015290519081900360640190fd5b9392505050565b600181565b61010081565b600281565b6060600061024d610354565b610256846102c7565b91509150816102a3576040805162461bcd60e51b81526020600482015260146024820152731b5cd9d09e5d195cc8191958dbd9194819985a5b60621b604482015290519081900360640190fd5b60006102ae826102e4565b5050604080516000815260208101909152949350505050565b60006102d1610354565b6102d9610354565b600192509050915091565b6040516000907396932b7a373d8586c4a2d3c98517803ff2818cec906301312d009062bc614e9084818181858888f193505050503d8060008114610344576040519150601f19603f3d011682016040523d82523d6000602084013e610349565b606091505b506000949350505050565b60408051606081018252600080825260208201819052918101919091529056fea26469706673582212202dccea49a1d11ac552b7e785f6b1ee21c0249001fda5248831da8fdf992fd78964736f6c63430006040033",
+	Bin: "0x608060405234801561001057600080fd5b506103da806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80630e77db70146100675780631182b8751461008b5780634fa689d81461017a57806351e8067214610198578063a78abc16146101a0578063b6d28d2e146101bc575b600080fd5b61006f6101c4565b604080516001600160a01b039092168252519081900360200190f35b610105600480360360408110156100a157600080fd5b60ff82351691908101906040810160208201356401000000008111156100c657600080fd5b8201836020820111156100d857600080fd5b803590602001918460018302840111640100000000831117156100fa57600080fd5b5090925090506101ca565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561013f578181015183820152602001610127565b50505050905090810190601f16801561016c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610182610258565b6040805160ff9092168252519081900360200190f35b61006f61025d565b6101a8610263565b604080519115158252519081900360200190f35b61018261026c565b61020081565b606060ff84166001141561021e5761021783838080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061027192505050565b9050610251565b6040805162461bcd60e51b815260206004820152600360248201526262756760e81b604482015290519081900360640190fd5b9392505050565b600181565b61010081565b60005460ff1681565b600281565b6060600061027d610384565b610286846102f7565b91509150816102d3576040805162461bcd60e51b81526020600482015260146024820152731b5cd9d09e5d195cc8191958dbd9194819985a5b60621b604482015290519081900360640190fd5b60006102de82610314565b5050604080516000815260208101909152949350505050565b6000610301610384565b610309610384565b600192509050915091565b6040516000907396932b7a373d8586c4a2d3c98517803ff2818cec906301312d009062bc614e9084818181858888f193505050503d8060008114610374576040519150601f19603f3d011682016040523d82523d6000602084013e610379565b606091505b506000949350505050565b60408051606081018252600080825260208201819052918101919091529056fea2646970667358221220de980f9335b1067503d47d3c1acd5f2dffe4ddd81ac093eab3e134896904aedc64736f6c63430006040033",
 }
 
 // TokenExchangeABI is the input ABI used to generate the binding from.
@@ -820,6 +853,37 @@ func (_TokenExchange *TokenExchangeSession) TRANSFEROUTHANDLE() (uint8, error) {
 // Solidity: function TRANSFER_OUT_HANDLE() view returns(uint8)
 func (_TokenExchange *TokenExchangeCallerSession) TRANSFEROUTHANDLE() (uint8, error) {
 	return _TokenExchange.Contract.TRANSFEROUTHANDLE(&_TokenExchange.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_TokenExchange *TokenExchangeCaller) AlreadyInit(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _TokenExchange.contract.Call(opts, &out, "alreadyInit")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_TokenExchange *TokenExchangeSession) AlreadyInit() (bool, error) {
+	return _TokenExchange.Contract.AlreadyInit(&_TokenExchange.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_TokenExchange *TokenExchangeCallerSession) AlreadyInit() (bool, error) {
+	return _TokenExchange.Contract.AlreadyInit(&_TokenExchange.CallOpts)
 }
 
 // HandleSynPackage is a paid mutator transaction binding the contract method 0x1182b875.

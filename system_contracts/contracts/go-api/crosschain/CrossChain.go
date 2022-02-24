@@ -30,7 +30,7 @@ var (
 
 // CrossChainMetaData contains all meta data concerning the CrossChain contract.
 var CrossChainMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"packageSequence\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"}],\"name\":\"packageDecodeError\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"packageType\",\"type\":\"uint8\"},{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"packageSequence\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"}],\"name\":\"receivePackage\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ACK_PACKAGE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FAIL_ACK_PACKAGE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SYN_PACKAGE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"packageSequence\",\"type\":\"uint64\"},{\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"}],\"name\":\"handleCCPackage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"handleContractMap\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"packageSequence\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"}],\"name\":\"packageDecodeError\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"packageType\",\"type\":\"uint8\"},{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"packageSequence\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"}],\"name\":\"receivePackage\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ACK_PACKAGE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FAIL_ACK_PACKAGE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SYN_PACKAGE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alreadyInit\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"packageSequence\",\"type\":\"uint64\"},{\"internalType\":\"uint8\",\"name\":\"handleId\",\"type\":\"uint8\"}],\"name\":\"handleCCPackage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"handleContractMap\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 	Sigs: map[string]string{
 		"b0355f5b": "ACK_PACKAGE()",
 		"51e80672": "CROSS_CHAIN_CONTRACT_ADDR()",
@@ -39,11 +39,12 @@ var CrossChainMetaData = &bind.MetaData{
 		"0e77db70": "TOKEN_EXCHANGE_CONTRACT_ADDR()",
 		"4fa689d8": "TRANSFER_IN_HANDLE()",
 		"b6d28d2e": "TRANSFER_OUT_HANDLE()",
+		"a78abc16": "alreadyInit()",
 		"82fa3ab1": "handleCCPackage(bytes,uint64,uint8)",
 		"460c8eb5": "handleContractMap(uint8)",
 		"e1c7392a": "init()",
 	},
-	Bin: "0x608060405234801561001057600080fd5b50610660806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c806382fa3ab11161006657806382fa3ab1146101155780638cc8f5611461019a578063b0355f5b14610105578063b6d28d2e1461019a578063e1c7392a146101a25761009e565b806305e68258146100a35780630e77db70146100c1578063460c8eb5146100e55780634fa689d81461010557806351e806721461010d575b600080fd5b6100ab6101aa565b6040805160ff9092168252519081900360200190f35b6100c96101af565b604080516001600160a01b039092168252519081900360200190f35b6100c9600480360360208110156100fb57600080fd5b503560ff166101b5565b6100ab6101d0565b6100c96101d5565b6101986004803603606081101561012b57600080fd5b81019060208101813564010000000081111561014657600080fd5b82018360208201111561015857600080fd5b8035906020019184600183028401116401000000008311171561017a57600080fd5b9193509150803567ffffffffffffffff16906020013560ff166101db565b005b6100ab61058d565b610198610592565b600081565b61020081565b6000602081905290815260409020546001600160a01b031681565b600181565b61010081565b6000806000606061022188888080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152506105d192505050565b9350935093509350836102a6578460ff168667ffffffffffffffff167f997d91a02d5e696ab94a30c03b00d5ada3207f80818db98c37f3f5bfdeda00128a8a60405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a350505050610587565b6040805160ff858116825291519187169167ffffffffffffffff8916917f591bae32fbc801fec820cde2a1ac597eb40c47c67d087a10cc51417dad79e1a8919081900360200190a360ff83166105825760ff8516600081815260208181526040808320548151631182b87560e01b815260048101958652602481019283528651604482015286516001600160a01b03909216958695631182b875958d958a9593949093606490910192918601918190849084905b8381101561037257818101518382015260200161035a565b50505050905090810190601f16801561039f5780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b1580156103bf57600080fd5b505af19250505080156104a557506040513d6000823e601f3d908101601f1916820160405260208110156103f257600080fd5b810190808051604051939291908464010000000082111561041257600080fd5b90830190602082018581111561042757600080fd5b825164010000000081118282018810171561044157600080fd5b82525081516020918201929091019080838360005b8381101561046e578181015183820152602001610456565b50505050905090810190601f16801561049b5780820380516001836020036101000a031916815260200191505b5060405250505060015b61057e576040516000815260443d10156104c15750600061055e565b60046000803e60005160e01c6308c379a081146104e257600091505061055e565b60043d036004833e81513d602482011167ffffffffffffffff8211171561050e5760009250505061055e565b808301805167ffffffffffffffff81111561053057600094505050505061055e565b8060208301013d860181111561054e5760009550505050505061055e565b601f01601f191660405250925050505b80610569575061056f565b50610579565b3d6000803e3d6000fd5b610580565b505b505b505050505b50505050565b600281565b600160009081526020527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d80546001600160a01b031916610200179055565b5060408051600080825260208201909252600192829190565b60208110610609578251825260209283019290910190601f19016105ea565b915181516020939093036101000a600019018019909116921691909117905256fea2646970667358221220bf5c8f020a56c7a86cb10d210854756ffab60e406a4f7751681c4c6da98bb34464736f6c63430006040033",
+	Bin: "0x608060405234801561001057600080fd5b5061073e806100206000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c806382fa3ab11161007157806382fa3ab1146101205780638cc8f561146101a5578063a78abc16146101ad578063b0355f5b14610110578063b6d28d2e146101a5578063e1c7392a146101c9576100a9565b806305e68258146100ae5780630e77db70146100cc578063460c8eb5146100f05780634fa689d81461011057806351e8067214610118575b600080fd5b6100b66101d1565b6040805160ff9092168252519081900360200190f35b6100d46101d6565b604080516001600160a01b039092168252519081900360200190f35b6100d46004803603602081101561010657600080fd5b503560ff166101dc565b6100b66101f7565b6100d46101fc565b6101a36004803603606081101561013657600080fd5b81019060208101813564010000000081111561015157600080fd5b82018360208201111561016357600080fd5b8035906020019184600183028401116401000000008311171561018557600080fd5b9193509150803567ffffffffffffffff16906020013560ff16610202565b005b6100b6610605565b6101b561060a565b604080519115158252519081900360200190f35b6101a3610613565b600081565b61020081565b6001602052600090815260409020546001600160a01b031681565b600181565b61010081565b60005460ff16610251576040805162461bcd60e51b815260206004820152601560248201527410dbdb9d1c9858dd081b9bdd081a5b9a5d081e595d605a1b604482015290519081900360640190fd5b6000806000606061029788888080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152506106af92505050565b93509350935093508361031c578460ff168667ffffffffffffffff167f997d91a02d5e696ab94a30c03b00d5ada3207f80818db98c37f3f5bfdeda00128a8a60405180806020018281038252848482818152602001925080828437600083820152604051601f909101601f19169092018290039550909350505050a3505050506105ff565b6040805160ff858116825291519187169167ffffffffffffffff8916917f591bae32fbc801fec820cde2a1ac597eb40c47c67d087a10cc51417dad79e1a8919081900360200190a360ff83166105fa5760ff85166000818152600160209081526040808320548151631182b87560e01b815260048101958652602481019283528651604482015286516001600160a01b03909216958695631182b875958d958a9593949093606490910192918601918190849084905b838110156103ea5781810151838201526020016103d2565b50505050905090810190601f1680156104175780820380516001836020036101000a031916815260200191505b509350505050600060405180830381600087803b15801561043757600080fd5b505af192505050801561051d57506040513d6000823e601f3d908101601f19168201604052602081101561046a57600080fd5b810190808051604051939291908464010000000082111561048a57600080fd5b90830190602082018581111561049f57600080fd5b82516401000000008111828201881017156104b957600080fd5b82525081516020918201929091019080838360005b838110156104e65781810151838201526020016104ce565b50505050905090810190601f1680156105135780820380516001836020036101000a031916815260200191505b5060405250505060015b6105f6576040516000815260443d1015610539575060006105d6565b60046000803e60005160e01c6308c379a0811461055a5760009150506105d6565b60043d036004833e81513d602482011167ffffffffffffffff82111715610586576000925050506105d6565b808301805167ffffffffffffffff8111156105a85760009450505050506105d6565b8060208301013d86018111156105c6576000955050505050506105d6565b601f01601f191660405250925050505b806105e157506105e7565b506105f1565b3d6000803e3d6000fd5b6105f8565b505b505b505050505b50505050565b600281565b60005460ff1681565b60005460ff1615610663576040805162461bcd60e51b815260206004820152601560248201527410dbdb9d1c9858dd081b9bdd081a5b9a5d081e595d605a1b604482015290519081900360640190fd5b6001600081815260208290527fcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f80546001600160a01b031916610200179055805460ff19169091179055565b5060408051600080825260208201909252600192829190565b602081106106e7578251825260209283019290910190601f19016106c8565b915181516020939093036101000a600019018019909116921691909117905256fea26469706673582212204259d42de28a8744f2bbbd4fbc4ae7c2e603b47e245f64b15b05f45cba94e4e564736f6c63430006040033",
 }
 
 // CrossChainABI is the input ABI used to generate the binding from.
@@ -432,6 +433,37 @@ func (_CrossChain *CrossChainSession) TRANSFEROUTHANDLE() (uint8, error) {
 // Solidity: function TRANSFER_OUT_HANDLE() view returns(uint8)
 func (_CrossChain *CrossChainCallerSession) TRANSFEROUTHANDLE() (uint8, error) {
 	return _CrossChain.Contract.TRANSFEROUTHANDLE(&_CrossChain.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_CrossChain *CrossChainCaller) AlreadyInit(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _CrossChain.contract.Call(opts, &out, "alreadyInit")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_CrossChain *CrossChainSession) AlreadyInit() (bool, error) {
+	return _CrossChain.Contract.AlreadyInit(&_CrossChain.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_CrossChain *CrossChainCallerSession) AlreadyInit() (bool, error) {
+	return _CrossChain.Contract.AlreadyInit(&_CrossChain.CallOpts)
 }
 
 // HandleContractMap is a free data retrieval call binding the contract method 0x460c8eb5.
@@ -1169,14 +1201,15 @@ func (_Memory *MemoryTransactorRaw) Transact(opts *bind.TransactOpts, method str
 
 // SystemMetaData contains all meta data concerning the System contract.
 var SystemMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"CROSS_CHAIN_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TOKEN_EXCHANGE_CONTRACT_ADDR\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_IN_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TRANSFER_OUT_HANDLE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alreadyInit\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 	Sigs: map[string]string{
 		"51e80672": "CROSS_CHAIN_CONTRACT_ADDR()",
 		"0e77db70": "TOKEN_EXCHANGE_CONTRACT_ADDR()",
 		"4fa689d8": "TRANSFER_IN_HANDLE()",
 		"b6d28d2e": "TRANSFER_OUT_HANDLE()",
+		"a78abc16": "alreadyInit()",
 	},
-	Bin: "0x608060405234801561001057600080fd5b5060e18061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c80630e77db7014604b5780634fa689d814606d57806351e80672146089578063b6d28d2e14608f575b600080fd5b60516095565b604080516001600160a01b039092168252519081900360200190f35b6073609b565b6040805160ff9092168252519081900360200190f35b605160a0565b607360a6565b61020081565b600181565b61010081565b60028156fea26469706673582212201367dd7187c6089feb9b3212cdaccb894ec0daafb988606762c8813df5cd72c964736f6c63430006040033",
+	Bin: "0x608060405234801561001057600080fd5b5061010e806100206000396000f3fe6080604052348015600f57600080fd5b506004361060505760003560e01c80630e77db701460555780634fa689d814607757806351e80672146093578063a78abc16146099578063b6d28d2e1460b3575b600080fd5b605b60b9565b604080516001600160a01b039092168252519081900360200190f35b607d60bf565b6040805160ff9092168252519081900360200190f35b605b60c4565b609f60ca565b604080519115158252519081900360200190f35b607d60d3565b61020081565b600181565b61010081565b60005460ff1681565b60028156fea26469706673582212205b76cf7c6f7a0ecc58d246f4d78dbf67e39b2fd779a337b119ab2ec53df3f13d64736f6c63430006040033",
 }
 
 // SystemABI is the input ABI used to generate the binding from.
@@ -1472,4 +1505,35 @@ func (_System *SystemSession) TRANSFEROUTHANDLE() (uint8, error) {
 // Solidity: function TRANSFER_OUT_HANDLE() view returns(uint8)
 func (_System *SystemCallerSession) TRANSFEROUTHANDLE() (uint8, error) {
 	return _System.Contract.TRANSFEROUTHANDLE(&_System.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_System *SystemCaller) AlreadyInit(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _System.contract.Call(opts, &out, "alreadyInit")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_System *SystemSession) AlreadyInit() (bool, error) {
+	return _System.Contract.AlreadyInit(&_System.CallOpts)
+}
+
+// AlreadyInit is a free data retrieval call binding the contract method 0xa78abc16.
+//
+// Solidity: function alreadyInit() view returns(bool)
+func (_System *SystemCallerSession) AlreadyInit() (bool, error) {
+	return _System.Contract.AlreadyInit(&_System.CallOpts)
 }

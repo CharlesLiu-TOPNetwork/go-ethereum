@@ -14,8 +14,10 @@ contract CrossChain is System {
 	event packageDecodeError(uint64 indexed packageSequence, uint8 indexed handleId, bytes payload);
 	event receivePackage(uint8 packageType, uint64 indexed packageSequence, uint8 indexed handleId);
 
-	function init() external {
+	function init() external onlyNotInit {
 		handleContractMap[TRANSFER_IN_HANDLE] = TOKEN_EXCHANGE_CONTRACT_ADDR;
+
+		alreadyInit = true;
 	}
 
 	// |- type -|- relayFee -|- package -|
@@ -68,7 +70,7 @@ contract CrossChain is System {
 		// uint64 height,
 		uint64 packageSequence,
 		uint8 handleId
-	) external {
+	) external onlyInit {
 		// todo requires
 
 		// bytes memory payloadLocal
