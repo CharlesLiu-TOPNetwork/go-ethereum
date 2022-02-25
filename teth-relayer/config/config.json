@@ -1,0 +1,36 @@
+{
+  "cross_chain_config": {
+    "source_chain_id": 1,
+    "dest_chain_id": 2
+  },
+  "top_config": {
+    "rpc_addrs": [
+      "http://192.168.30.200:19081"
+    ]
+  },
+  "teth_config": {
+    "private_key": "c4cba1aa68b60420546746b41347585a60940a9e58eba592d8edf5031afcbe06",
+    "providers": [
+      "http://127.0.0.1:8540"
+    ],
+    "gas_limit": 4700000,
+    "gas_price": 10000
+  },
+  "log_config": {
+    "level": "DEBUG",
+    "filename": "",
+    "max_file_size_in_mb": 0,
+    "max_backups_of_log_files": 0,
+    "max_age_to_retain_log_files_in_days": 0,
+    "use_console_logger": true,
+    "use_file_logger": false,
+    "compress": false
+  },
+  "db_config": {
+    "dialect": "mysql",
+    "db_path": "user:passwd@(ip:port)/name?charset=utf8&parseTime=True&loc=Local"
+  },
+  "admin_config": {
+    "listen_addr": "0.0.0.0:8080"
+  }
+}
