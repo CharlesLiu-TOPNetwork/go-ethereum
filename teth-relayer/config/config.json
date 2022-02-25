@@ -5,7 +5,7 @@
   },
   "top_config": {
     "rpc_addrs": [
-      "http://192.168.30.200:19081"
+      "http://127.0.0.1:19081"
     ]
   },
   "teth_config": {
