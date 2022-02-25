@@ -39,7 +39,7 @@ func (r *Relayer) relayerDaemon(startHeight uint64) {
 		latest_height, err := r.topExecutor.GetLatestBlockHeight("Ta0000@0")
 		if err != nil {
 			common.Logger.Error(err.Error())
-			return
+			continue
 		}
 
 		if err != nil {
