@@ -10,9 +10,9 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/shopspring/decimal"
 
-	"github.com/telosprotocol/teth-relayer/common"
-	config "github.com/telosprotocol/teth-relayer/config"
-	"github.com/telosprotocol/teth-relayer/model"
+	"github.com/ethereum/go-ethereum/teth-relayer/common"
+	config "github.com/ethereum/go-ethereum/teth-relayer/config"
+	"github.com/ethereum/go-ethereum/teth-relayer/model"
 )
 
 type Admin struct {

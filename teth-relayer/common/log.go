@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/op/go-logging"
-	config "github.com/telosprotocol/teth-relayer/config"
+	config "github.com/ethereum/go-ethereum/teth-relayer/config"
 	"github.com/tendermint/tendermint/libs/log"
 	"gopkg.in/natefinch/lumberjack.v2"
 )

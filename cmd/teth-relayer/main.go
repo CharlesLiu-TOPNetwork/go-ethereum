@@ -10,11 +10,11 @@ import (
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	"github.com/telosprotocol/teth-relayer/admin"
-	"github.com/telosprotocol/teth-relayer/common"
-	config "github.com/telosprotocol/teth-relayer/config"
-	"github.com/telosprotocol/teth-relayer/executor"
-	"github.com/telosprotocol/teth-relayer/relayer"
+	"github.com/ethereum/go-ethereum/teth-relayer/admin"
+	"github.com/ethereum/go-ethereum/teth-relayer/common"
+	config "github.com/ethereum/go-ethereum/teth-relayer/config"
+	"github.com/ethereum/go-ethereum/teth-relayer/executor"
+	"github.com/ethereum/go-ethereum/teth-relayer/relayer"
 )
 
 const (

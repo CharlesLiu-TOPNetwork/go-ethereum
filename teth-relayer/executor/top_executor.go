@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/telosprotocol/teth-relayer/common"
-	config "github.com/telosprotocol/teth-relayer/config"
+	"github.com/ethereum/go-ethereum/teth-relayer/common"
+	config "github.com/ethereum/go-ethereum/teth-relayer/config"
 )
 
 type TopClient struct {
