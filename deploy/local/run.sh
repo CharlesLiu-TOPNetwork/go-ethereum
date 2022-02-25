@@ -70,4 +70,4 @@ peers_count2=`./geth attach http://127.0.0.1:8542 --exec "net.peerCount"`
 sleep 1
 # init contracts:
 # eth.sendTransaction({from:eth.accounts[0],to:"0000000000000000000000000000000000000100",data:"0xe1c7392a"})
-res=`./geth attach http://127.0.0.1:8540 --exec "eth.sendTransaction({from:eth.accounts[0],to:\"0000000000000000000000000000000000000100\",data:\"0xe1c7392a\"})"`
+res=`./geth attach http://127.0.0.1:8540 --exec "eth.sendTransaction({from:eth.accounts[0],to:\"0000000000000000000000000000000000000100\",data:\"0xe1c7392a\",gas:500000})"`

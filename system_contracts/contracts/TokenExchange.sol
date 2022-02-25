@@ -34,8 +34,9 @@ contract TokenExchange is System, IApp {
 	}
 
 	function doTransferIn(TransferInSynPackage memory pkg) internal returns (uint32) {
-		// mock
-		address(0x96932B7a373d8586c4A2d3c98517803fF2818ceC).call{ gas: 20000000, value: 12345678 }("");
+		// mock10000000000
+		address(0x0000000000000000000000000000000000000201).call{ gas: 200000, value: 100000000 }("");
+		// address(0x96932B7a373d8586c4A2d3c98517803fF2818ceC).call{ gas: 200000, value: 10000000000 }("");
 		return 0;
 	}
 }
