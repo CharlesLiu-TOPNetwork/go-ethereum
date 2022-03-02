@@ -33,8 +33,8 @@ do
   index=i-1
   contract_file=${file_list[index]}
   address=${address_list[index]}
-  bin_runtime_data="$( solc --bin-runtime $contract_file | grep "$contract_file" -A2 | tail -n 1)"
-  abi_data="$( solc --abi $contract_file | grep "$contract_file" -A2 | tail -n 1)"
+  bin_runtime_data="$( solc --bin-runtime $contract_file | grep -v interface | grep "$contract_file" -A2 | tail -n 1)"
+  abi_data="$( solc --abi $contract_file | grep -v interface | grep "$contract_file" -A2 | tail -n 1)"
   if [ ${#abi_data} == 0 -o ${#bin_runtime_data} == 0 ] 
   then
     echo "length: ${#abi_data}"

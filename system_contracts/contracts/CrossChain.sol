@@ -3,14 +3,18 @@ pragma solidity 0.6.4;
 import "./System.sol";
 import "./lib/Memory.sol";
 import "./interface/IApp.sol";
+import "./interface/ICrossChain.sol";
 
-contract CrossChain is System {
+contract CrossChain is System, ICrossChain {
 	uint8 public constant SYN_PACKAGE = 0x00;
 	uint8 public constant ACK_PACKAGE = 0x01;
 	uint8 public constant FAIL_ACK_PACKAGE = 0x02;
 
 	mapping(uint8 => address) public handleContractMap;
 
+	mapping(uint8 => uint64) public SendSequenceMap;
+
+	event crossChainPackage(uint16 chainId, uint64 indexed packageSequence, uint8 indexed channelId, bytes payload);
 	event packageDecodeError(uint64 indexed packageSequence, uint8 indexed handleId, bytes payload);
 	event receivePackage(uint8 packageType, uint64 indexed packageSequence, uint8 indexed handleId);
 
@@ -18,6 +22,42 @@ contract CrossChain is System {
 		handleContractMap[TRANSFER_IN_HANDLE] = TOKEN_EXCHANGE_CONTRACT_ADDR;
 
 		alreadyInit = true;
+	}
+
+	function encodePayload(
+		uint8 packageType,
+		uint256 relayFee,
+		bytes memory msgBytes
+	) public pure returns (bytes memory) {
+		// mock
+		return (new bytes(0));
+		uint256 payloadLength = msgBytes.length + 33;
+		bytes memory payload = new bytes(payloadLength);
+		uint256 ptr;
+		assembly {
+			ptr := payload
+		}
+		ptr += 33;
+
+		assembly {
+			mstore(ptr, relayFee)
+		}
+
+		ptr -= 32;
+		assembly {
+			mstore(ptr, packageType)
+		}
+
+		ptr -= 1;
+		assembly {
+			mstore(ptr, payloadLength)
+		}
+
+		ptr += 65;
+		(uint256 src, ) = Memory.fromBytes(msgBytes);
+		Memory.copy(src, ptr, msgBytes.length);
+
+		return payload;
 	}
 
 	// |- type -|- relayFee -|- package -|
@@ -93,5 +133,36 @@ contract CrossChain is System {
 				// send failed ack
 			}
 		}
+	}
+
+	function sendPackage(
+		uint64 packageSequence,
+		uint8 handleId,
+		bytes memory payload
+	) internal {
+		// if (block.number > previousTxHeight) {
+		//   oracleSequence++;
+		//   txCounter = 1;
+		//   previousTxHeight=block.number;
+		// } else {
+		//   txCounter++;
+		//   if (txCounter>batchSizeForOracle) {
+		//     oracleSequence++;
+		//     txCounter = 1;
+		//   }
+		// }
+		/*uint64(oracleSequence),*/
+		emit crossChainPackage(616, packageSequence, handleId, payload);
+	}
+
+	function sendCCPackage(
+		uint8 handleId,
+		bytes calldata msgBytes,
+		uint256 relayFee
+	) external override onlyInit {
+		uint64 sendSequence = SendSequenceMap[handleId];
+		sendPackage(sendSequence, handleId, encodePayload(SYN_PACKAGE, relayFee, msgBytes));
+		sendSequence++;
+		SendSequenceMap[handleId] = sendSequence;
 	}
 }
