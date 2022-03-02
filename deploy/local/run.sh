@@ -35,9 +35,9 @@ sleep 2
 
 # start geth at background:
 echo "start geth at background: "
-./geth --datadir data/node0 --networkid 616 --port 10010 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8540 --http.api eth,web3,admin,net,miner,personal --rpc.allow-unprotected-txs --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node0/teth.log &
-./geth --datadir data/node1 --networkid 616 --port 10011 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8541 --http.api eth,web3,admin,net,miner,personal --rpc.allow-unprotected-txs --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node1/teth.log &
-./geth --datadir data/node2 --networkid 616 --port 10012 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.port 8542 --http.api eth,web3,admin,net,miner,personal --rpc.allow-unprotected-txs --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node2/teth.log &
+./geth --datadir data/node0 --networkid 616 --port 10010 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.addr=0.0.0.0 --http.port 8540 --http.corsdomain '*' --http.api eth,web3,admin,net,miner,personal --rpc.allow-unprotected-txs --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node0/teth.log &
+./geth --datadir data/node1 --networkid 616 --port 10011 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.addr=0.0.0.0 --http.port 8541 --http.corsdomain '*' --http.api eth,web3,admin,net,miner,personal --rpc.allow-unprotected-txs --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node1/teth.log &
+./geth --datadir data/node2 --networkid 616 --port 10012 --nodiscover --allow-insecure-unlock --unlock '0' --password ./passwd --http --http.addr=0.0.0.0 --http.port 8542 --http.corsdomain '*' --http.api eth,web3,admin,net,miner,personal --rpc.allow-unprotected-txs --mine --miner.threads 1 --miner.gasprice 100 --syncmode full 2>>data/node2/teth.log &
 sleep 2
 
 # get enode info:
